@@ -5,7 +5,7 @@ import TableHead from "@mui/material/TableHead";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useTableSort } from "../../hooks";
+import { useTableSortCustom } from "../../hooks";
 
 interface IData {
   name: string;
@@ -29,27 +29,39 @@ const rowsData: IData[] = [
   { name: "Gingerbread", calories: 356, fat: 16.0, carbs: 49, protein: 3.9 },
 ];
 
-export default function BasicTable() {
-  const { data, handleSort } = useTableSort<IData>(rowsData);
+export default function CustomTable() {
+  const { data, getColumnProps } = useTableSortCustom<IData>(rowsData);
+
+  const logSort = (
+    event: React.MouseEvent<HTMLTableCellElement, MouseEvent>
+  ) => {
+    console.log("logSort", event.currentTarget.id);
+    console.log("logSort 2", event);
+  };
 
   return (
     <TableContainer component={Paper} sx={{ marginTop: 3 }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell id="name" onClick={handleSort}>
+            <TableCell
+              id="name"
+              {...getColumnProps({
+                onClick: logSort,
+              })}
+            >
               Dessert (100g serving)
             </TableCell>
-            <TableCell align="right" id="calories" onClick={handleSort}>
+            <TableCell align="right" id="calories" {...getColumnProps()}>
               Calories
             </TableCell>
-            <TableCell align="right" id="fat" onClick={handleSort}>
+            <TableCell align="right" id="fat" {...getColumnProps()}>
               Fat&nbsp;(g)
             </TableCell>
-            <TableCell align="right" id="carbs" onClick={handleSort}>
+            <TableCell align="right" id="carbs" {...getColumnProps()}>
               Carbs&nbsp;(g)
             </TableCell>
-            <TableCell align="right" id="protein" onClick={handleSort}>
+            <TableCell align="right" id="protein" {...getColumnProps()}>
               Protein&nbsp;(g)
             </TableCell>
           </TableRow>

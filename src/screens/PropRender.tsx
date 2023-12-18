@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 import { MainLayout } from "../layouts";
 import { Flag, RenderFlag } from "../components";
@@ -22,7 +22,7 @@ export const PropRender = () => {
       >
         <Flag />
         <RenderFlag
-          render={({ features }) => (
+          render={({ features, isLoading }) => (
             <>
               <Typography
                 component={"h3"}
@@ -32,9 +32,13 @@ export const PropRender = () => {
               >
                 Flag A and B
               </Typography>
-              <Typography component="p">
-                Flag {features.infoA && features.infoB ? "Both" : "false"}
-              </Typography>              
+              {isLoading ? (
+                <CircularProgress size={15} sx={{ marginTop: 1 }} />
+              ) : (
+                <Typography component="p">
+                  Flag {features.infoA && features.infoB ? "Both" : "false"}
+                </Typography>
+              )}
             </>
           )}
         />

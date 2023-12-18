@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
-import { AdminPlayer } from "../components";
 import { MainLayout } from "../layouts";
+import BasicTable from "../components/PropsGetters/UserTable";
+import CustomTable from "../components/PropsGetters/UserTableCustom";
 
 export const PropsGetters = () => {
   return (
@@ -9,26 +10,22 @@ export const PropsGetters = () => {
         Props Getters
       </Typography>
       <Typography component="p" marginTop={2} lineHeight={1.7}>
-        xxxxx
+        Funciona para ampliar o agregar logica extra a un componente.
+        Sin necesidad de alterar la logica existente.
       </Typography>
 
+      
       <Typography variant="h2" component="h2" marginTop={3} fontWeight={"bold"}>
-        Desventajas
+        Tabla basica
       </Typography>
-      <ul>
-        <li>
-          <Typography component="p">Re-renderizados</Typography>
-        </li>
-      </ul>
+      
+      <BasicTable />
+      
       <Typography variant="h2" component="h2" marginTop={3} fontWeight={"bold"}>
-        Ventajas
+        Con Props Getters
       </Typography>
-      <ul>
-        <li>
-          <Typography component="p">Reusabilidad</Typography>
-        </li>
-      </ul>
-      <AdminPlayer />
+      
+      <CustomTable />
     </MainLayout>
   );
 };

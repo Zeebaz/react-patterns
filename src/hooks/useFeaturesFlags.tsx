@@ -12,8 +12,9 @@ export const useFeaturesFlags = () => {
   const fetchFeatures =async () => {
     try {
         setIsLoading(true);
-        const data = await availableInfo({ seconds: 3 });
+        const data = await availableInfo({ seconds: 2 });
         setFeatures(data);
+        setIsLoading(false);
     } catch (error) {
         console.log(error)
     }

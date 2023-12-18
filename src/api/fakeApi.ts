@@ -6,7 +6,7 @@ export interface IInfo {
 
 export const availableInfo = ({
   seconds = 1000,
-  infoA = true,
+  infoA = false,
   infoB = true,
 }: IInfo): Promise<IInfo> => {
   return new Promise((resolve) => {

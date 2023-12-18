@@ -3,7 +3,6 @@ import { AppContext } from "./AppContext";
 
 import {
   SolarPowerOutlined,
-  BorderStyleOutlined,
   ExtensionOutlined,
   SettingsRemoteOutlined,
   TrackChangesOutlined,
@@ -41,11 +40,6 @@ const patterns = [
     name: "Prop Render",
     path: "prop-render",
     Icon: <IosShareOutlined />,
-  },
-  {
-    name: "Extensible Styles",
-    path: "extensible-styles",
-    Icon: <BorderStyleOutlined />,
   },
 ];
 

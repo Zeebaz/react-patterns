@@ -2,7 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   CompoundComponent,
   ControlProps,
-  ExtensibleStyles,
+
+  HOC,
   PropRender,
   PropsGetters,
   StateReducer,
@@ -32,11 +33,7 @@ const App = () => {
     },
     {
       path: "/hoc",
-      element: <PropRender />,
-    },
-    {
-      path: "/extensible-styles",
-      element: <ExtensibleStyles />,
+      element: <HOC />,
     },
     {
       path: "/prop-render",
