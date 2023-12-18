@@ -8,6 +8,7 @@ import {
   SettingsRemoteOutlined,
   TrackChangesOutlined,
   UnfoldMoreDoubleOutlined,
+  IosShareOutlined,
 } from "@mui/icons-material";
 
 const patterns = [
@@ -37,6 +38,11 @@ const patterns = [
     Icon: <SolarPowerOutlined />,
   },
   {
+    name: "Prop Render",
+    path: "prop-render",
+    Icon: <IosShareOutlined />,
+  },
+  {
     name: "Extensible Styles",
     path: "extensible-styles",
     Icon: <BorderStyleOutlined />,
@@ -44,12 +50,11 @@ const patterns = [
 ];
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
-
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
     <AppContext.Provider
-      value={{                
+      value={{
         patterns,
         isOpenMenu,
         setIsOpenMenu,

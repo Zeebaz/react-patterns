@@ -3,17 +3,16 @@ import {
   CompoundComponent,
   ControlProps,
   ExtensibleStyles,
-  HOC,
+  PropRender,
   PropsGetters,
   StateReducer,
 } from "./screens";
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <ControlProps />,      
+      element: <ControlProps />,
     },
     {
       path: "/control-props",
@@ -33,15 +32,15 @@ const App = () => {
     },
     {
       path: "/hoc",
-      element: <HOC />,      
+      element: <PropRender />,
     },
     {
       path: "/extensible-styles",
       element: <ExtensibleStyles />,
     },
     {
-      path: "/extensible-styles",
-      element: <ExtensibleStyles />,
+      path: "/prop-render",
+      element: <PropRender />,
     },
   ]);
 
