@@ -8,6 +8,7 @@ import {
 import { AdminPlayer, Player } from "../components";
 // import { CheckBox } from "@mui/icons-material";
 import { useState } from "react";
+import { MainLayout } from "../layouts";
 
 export const StateReducer = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -15,9 +16,9 @@ export const StateReducer = () => {
   const isXSmall = useMediaQuery("(max-width: 500px)");
 
   return (
-    <>
+    <MainLayout>
       <Typography variant="h1" component="h1">
-        Props Getters
+        State Reducer
       </Typography>
       <Typography component="p" marginTop={2} lineHeight={1.7}>
         Consiste en la extension de las acciones de acciones de un Reducer,
@@ -61,6 +62,6 @@ export const StateReducer = () => {
           <AdminPlayer isAdmin={isAdmin} />
         </Box>
       </Box>
-    </>
+    </MainLayout>
   );
 };

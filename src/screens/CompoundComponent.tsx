@@ -5,6 +5,7 @@ import { ProductTitle } from "../components/ComponentCompound/ProductTitle";
 import { blueGrey } from "@mui/material/colors";
 import { ProductButtons } from "../components/ComponentCompound/ProductButtons";
 import ProductCardCompound from "../components/ComponentCompound";
+import { MainLayout } from "../layouts";
 
 const product = {
   id: "1",
@@ -14,7 +15,7 @@ const product = {
 
 export const CompoundComponent = () => {
   return (
-    <>
+    <MainLayout>
       <Typography variant="h1" component="h1">
         Compound Component
       </Typography>
@@ -117,6 +118,6 @@ export const CompoundComponent = () => {
           <ProductCardCompound.Title />
         </ProductCardCompound>
       </Box>
-    </>
+    </MainLayout>
   );
 };

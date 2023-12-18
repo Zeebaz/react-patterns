@@ -1,9 +1,10 @@
 import { Typography } from "@mui/material";
 import { AdminPlayer } from "../components";
+import { MainLayout } from "../layouts";
 
 export const PropsGetters = () => {
   return (
-    <>
+    <MainLayout>
       <Typography variant="h1" component="h1">
         Props Getters
       </Typography>
@@ -28,6 +29,6 @@ export const PropsGetters = () => {
         </li>
       </ul>
       <AdminPlayer />
-    </>
+    </MainLayout>
   );
 };

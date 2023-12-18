@@ -1,5 +1,7 @@
+import { MainLayout } from "../layouts"
+
 export const ReactHooks = () => {
   return (
-    <div>ReactHooks</div>
+    <MainLayout>ReactHooks</MainLayout>
   )
 }

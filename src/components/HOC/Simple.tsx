@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
+import { green, red } from "@mui/material/colors";
 
-export const Simple = () => {
+export const Simple = ({ isLoggedIn = false }: { isLoggedIn?: boolean }) => {
   return (
     <Box
       color="#EAF2F8"
-      bgcolor={"#00A6E3"}
+      bgcolor={isLoggedIn ? green[500] : red[500]}
       padding={2}
       maxWidth={"300px"}
       borderRadius={2}

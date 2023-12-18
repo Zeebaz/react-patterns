@@ -2,13 +2,6 @@ import { FC, PropsWithChildren, useState } from "react";
 import { AppContext } from "./AppContext";
 
 import {
-  CompoundComponent,
-  ControlProps,
-  ExtensibleStyles,
-  HOC,
-  StateReducer,
-} from "../../screens";
-import {
   SolarPowerOutlined,
   BorderStyleOutlined,
   ExtensionOutlined,
@@ -20,45 +13,43 @@ import {
 const patterns = [
   {
     name: "Control Props",
-    Component: <ControlProps />,
+    path: "control-props",
     Icon: <SettingsRemoteOutlined />,
   },
   {
     name: "State Reducer",
-    Component: <StateReducer />,
+    path: "state-reducer",
     Icon: <UnfoldMoreDoubleOutlined />,
   },
   {
     name: "Compound Component",
-    Component: <CompoundComponent />,
+    path: "compound-component",
     Icon: <ExtensionOutlined />,
   },
   {
     name: "Props Getters",
-    Component: <StateReducer />,
+    path: "props-getters",
     Icon: <TrackChangesOutlined />,
   },
   {
     name: "Hight Order Component - HOC",
-    Component: <HOC />,
+    path: "hoc",
     Icon: <SolarPowerOutlined />,
   },
   {
     name: "Extensible Styles",
-    Component: <ExtensibleStyles />,
+    path: "extensible-styles",
     Icon: <BorderStyleOutlined />,
   },
 ];
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [indexPattern, setindexPattern] = useState(0);
+
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
     <AppContext.Provider
-      value={{
-        indexPattern,
-        setindexPattern,
+      value={{                
         patterns,
         isOpenMenu,
         setIsOpenMenu,

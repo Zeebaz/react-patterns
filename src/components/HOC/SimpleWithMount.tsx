@@ -1,15 +1,16 @@
 import { Box, Typography } from "@mui/material";
+import { green, red } from "@mui/material/colors";
 import { useEffect } from "react";
 
-export const SimpleWithMount = () => {
+export const SimpleWithMount = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
   useEffect(() => {
-    console.log("Simple component mounted");
-  }, []);
+    console.log(`Tu estas ${isLoggedIn ? "logueado" : "no logueado"}`);
+  }, [isLoggedIn]);
 
   return (
     <Box
       color="#EAF2F8"
-      bgcolor={"#00A6E3"}
+      bgcolor={isLoggedIn ? green[500] : red[500]}
       padding={2}
       maxWidth={"300px"}
       borderRadius={2}

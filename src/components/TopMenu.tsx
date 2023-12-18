@@ -12,7 +12,7 @@ import { AppContext } from "../context";
 import { useNavigate } from "react-router-dom";
 
 export const TopMenu: React.FC = () => {
-  const { isOpenMenu, setIsOpenMenu, patterns, setindexPattern } =
+  const { isOpenMenu, setIsOpenMenu, patterns } =
     useContext(AppContext);
   const navigate = useNavigate();
 
@@ -27,12 +27,11 @@ export const TopMenu: React.FC = () => {
       }}
     >
       <List>
-        {patterns.map((pattern, index) => (
+        {patterns.map((pattern) => (
           <ListItem
             key={pattern.name}
             disablePadding
-            // onClick={() => setindexPattern(index)}
-            onClick={() => navigate("/compound-component")}
+            onClick={() => navigate(`/${pattern.path}`)}
           >
             <ListItemButton>
               <ListItemIcon>{pattern.Icon}</ListItemIcon>

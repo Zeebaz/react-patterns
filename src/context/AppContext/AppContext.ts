@@ -1,11 +1,9 @@
 import { createContext } from "react";
 
-interface contextProps {
-  setindexPattern: (index: number) => void;
-  indexPattern: number;
+interface contextProps {  
   patterns: {
     name: string;
-    Component: JSX.Element;
+    path: string;
     Icon: JSX.Element;
   }[];
   isOpenMenu: boolean;

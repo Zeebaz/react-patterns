@@ -18,8 +18,7 @@ export const AdminPlayer = ({ isAdmin = false }: { isAdmin?: boolean }) => {
     },
   });
 
-  if (!isAdmin && isPlaying) {
-    console.log("cambiazo");
+  if (!isAdmin && isPlaying) {    
     pause();
   }
 

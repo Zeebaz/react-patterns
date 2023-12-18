@@ -1,15 +1,19 @@
-// import { useContext } from "react";
-import { MainLayout } from "./layouts";
-// import { AppContext } from "./context";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { CompoundComponent, ControlProps, StateReducer } from "./screens";
+import {
+  CompoundComponent,
+  ControlProps,
+  ExtensibleStyles,
+  HOC,
+  PropsGetters,
+  StateReducer,
+} from "./screens";
 
 const App = () => {
-  // const { indexPattern, patterns } = useContext(AppContext);
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <ControlProps />,
+      element: <ControlProps />,      
     },
     {
       path: "/control-props",
@@ -22,6 +26,22 @@ const App = () => {
     {
       path: "/compound-component",
       element: <CompoundComponent />,
+    },
+    {
+      path: "/props-getters",
+      element: <PropsGetters />,
+    },
+    {
+      path: "/hoc",
+      element: <HOC />,      
+    },
+    {
+      path: "/extensible-styles",
+      element: <ExtensibleStyles />,
+    },
+    {
+      path: "/extensible-styles",
+      element: <ExtensibleStyles />,
     },
   ]);
 
