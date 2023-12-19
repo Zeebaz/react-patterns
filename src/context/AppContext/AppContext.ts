@@ -1,13 +1,9 @@
 import { createContext } from "react";
 
-interface contextProps {  
-  patterns: {
-    name: string;
-    path: string;
-    Icon: JSX.Element;
-  }[];
+export interface contextProps {
   isOpenMenu: boolean;
   setIsOpenMenu: (isOpenMenu: boolean) => void;
+  // setIsOpenMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const AppContext = createContext({} as contextProps);
